@@ -19,7 +19,7 @@
 
 /********************************************************
 *****												*****
-*****		Solar System SCENE :)					*****
+*****		Solar System SCENE :)	***				*****
 *****												*****
 *****												*****
 *****												*****
@@ -79,14 +79,14 @@ void SceneManager::init(const std::string &resource_dir)
 	ship_mesh_test->addTexture(kernel->getTextureLoader()->loadRelativePath("FEROX_BU.tga"), "normal_map");
 	ship_mesh_test->setPosition( glm::vec3(0,1.0f,10) );
 	ship_mesh_test->setScale(0.01f);
-	ship_mesh_test->setPosition( 
-		glm::vec3(ship_mesh_test->getPosition().x, 
-		terrain->getHeight(ship_mesh_test->getPosition())+ship_mesh_test->getPosition().y, 
-		ship_mesh_test->getPosition().z) 
+	ship_mesh_test->setPosition(
+		glm::vec3(ship_mesh_test->getPosition().x,
+		terrain->getHeight(ship_mesh_test->getPosition())+ship_mesh_test->getPosition().y,
+		ship_mesh_test->getPosition().z)
 	);
 
 	camera->setPos(
-		ship_mesh_test->getPosition() + glm::vec3(0.0f, 1.0f, 10.0f) 
+		ship_mesh_test->getPosition() + glm::vec3(0.0f, 1.0f, 10.0f)
 	);
 
 	//Here we add all the nodes to the "root" node called scene. This adds them into the scenegraph right under the root node.
@@ -107,7 +107,7 @@ void SceneManager::init(const std::string &resource_dir)
 
 	//2) Godrays Pass
 	godrays_pass = std::make_shared<Pass::GodraysPass>(kernel->getWidth(), kernel->getHeight());
-	
+
 	//3) Bloom Pass
 	bloom_pass = std::make_shared<Pass::BloomPass>(kernel->getWidth(), kernel->getHeight());
 
@@ -157,7 +157,7 @@ void SceneManager::render()
 	} scene_pass->end(); //Then, when the scene is rendered, we end the Scene Pass
 
 	// 2)
-	//Next, godrays occlusion pass. Here we need to render all nodes in the scene 
+	//Next, godrays occlusion pass. Here we need to render all nodes in the scene
 	//that will occlude lights using the occlusion shader, and all nodes in the scene
 	//(skybox) that will cast light on the scene using the occlusion_light shader.
 	//This creates an image of black and white colors essentially.
