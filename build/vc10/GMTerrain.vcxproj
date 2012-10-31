@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8ABE97C4-772D-4486-896F-D2EE4F8FDBA7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GMTerrain</RootNamespace>
+    <ProjectName>GMTerrainFog</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>../../bin/$(Configuration)/</OutDir>
+    <TargetName>$(ProjectName)-debug</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>../../bin/$(Configuration)/</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;FREEGLUT_STATIC;ASSIMP_BUILD_BOOST_WORKAROUND;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_NO_IFC_IMPORTER;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>../../depends/;../../depends/AssImp/src/BoostWorkaround/;../../depends/AssImp/contrib/;../../depends/AssImp/contrib/cppunit-1.12.1/include/</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenGL32.lib;WinMM.lib;DevIL.lib;ILU.lib;ILUT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../depends/IL/lib/%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;FREEGLUT_STATIC;ASSIMP_BUILD_BOOST_WORKAROUND;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;ASSIMP_BUILD_NO_IFC_IMPORTER;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>../../depends/;../../depends/AssImp/src/BoostWorkaround/;../../depends/AssImp/contrib/;../../depends/AssImp/contrib/cppunit-1.12.1/include/</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OpenGL32.lib;WinMM.lib;DevIL.lib;ILU.lib;ILUT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../depends/IL/lib/%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\bin\resources\ini\engine.ini" />
+    <None Include="..\..\bin\resources\shaders\bloom_pass.fs" />
+    <None Include="..\..\bin\resources\shaders\bloom_pass_color_highpass.fs" />
+    <None Include="..\..\bin\resources\shaders\bloom_pass_gaussian_blur_horizontal.fs" />
+    <None Include="..\..\bin\resources\shaders\bloom_pass_gaussian_blur_vertical.fs" />
+    <None Include="..\..\bin\resources\shaders\final_pass.fs" />
+    <None Include="..\..\bin\resources\shaders\fullscreen_pass.vs" />
+    <None Include="..\..\bin\resources\shaders\godrays_occlusion_pass.fs" />
+    <None Include="..\..\bin\resources\shaders\godrays_pass.fs" />
+    <None Include="..\..\bin\resources\shaders\occlusion.fs" />
+    <None Include="..\..\bin\resources\shaders\occlusion.vs" />
+    <None Include="..\..\bin\resources\shaders\occlusion_light.fs" />
+    <None Include="..\..\bin\resources\shaders\pass_through_simple.fs" />
+    <None Include="..\..\bin\resources\shaders\pass_through_simple.vs" />
+    <None Include="..\..\bin\resources\shaders\skybox.fs" />
+    <None Include="..\..\bin\resources\shaders\skybox.vs" />
+    <None Include="..\..\bin\resources\shaders\terrain.fs" />
+    <None Include="..\..\bin\resources\shaders\terrain.vs" />
+    <None Include="..\..\depends\AssImp\color4.inl" />
+    <None Include="..\..\depends\AssImp\contrib\cppunit_note.txt" />
+    <None Include="..\..\depends\AssImp\contrib\irrXML_note.txt" />
+    <None Include="..\..\depends\AssImp\contrib\poly2tri\AUTHORS" />
+    <None Include="..\..\depends\AssImp\contrib\poly2tri\LICENSE" />
+    <None Include="..\..\depends\AssImp\contrib\poly2tri\README" />
+    <None Include="..\..\depends\AssImp\contrib\poly2tri_patch.txt" />
+    <None Include="..\..\depends\AssImp\contrib\zlib_note.txt" />
+    <None Include="..\..\depends\AssImp\material.inl" />
+    <None Include="..\..\depends\AssImp\matrix3x3.inl" />
+    <None Include="..\..\depends\AssImp\matrix4x4.inl" />
+    <None Include="..\..\depends\AssImp\quaternion.inl" />
+    <None Include="..\..\depends\AssImp\src\BlenderDNA.inl" />
+    <None Include="..\..\depends\AssImp\src\SmoothingGroups.inl" />
+    <None Include="..\..\depends\AssImp\vector2.inl" />
+    <None Include="..\..\depends\AssImp\vector3.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\depends\AssImp\ai_assert.h" />
+    <ClInclude Include="..\..\depends\AssImp\anim.h" />
+    <ClInclude Include="..\..\depends\AssImp\camera.h" />
+    <ClInclude Include="..\..\depends\AssImp\cexport.h" />
+    <ClInclude Include="..\..\depends\AssImp\cfileio.h" />
+    <ClInclude Include="..\..\depends\AssImp\cimport.h" />
+    <ClInclude Include="..\..\depends\AssImp\color4.h" />
+    <ClInclude Include="..\..\depends\AssImp\Compiler\poppack1.h" />
+    <ClInclude Include="..\..\depends\AssImp\Compiler\pushpack1.h" />
+    <ClInclude Include="..\..\depends\AssImp\config.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\clipper\clipper.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\ConvertUTF\ConvertUTF.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\irrXML\CXMLReaderImpl.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\irrXML\heapsort.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\irrXML\irrArray.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\irrXML\irrString.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\irrXML\irrTypes.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\irrXML\irrXML.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\common\shapes.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\common\utils.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\poly2tri.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\advancing_front.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\cdt.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\sweep.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\sweep_context.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\unzip\crypt.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\unzip\ioapi.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\unzip\unzip.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\crc32.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\deflate.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\inffast.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\inffixed.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\inflate.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\inftrees.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\trees.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\zconf.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\zconf.in.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\zlib.h" />
+    <ClInclude Include="..\..\depends\AssImp\contrib\zlib\zutil.h" />
+    <ClInclude Include="..\..\depends\AssImp\DefaultLogger.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\defs.h" />
+    <ClInclude Include="..\..\depends\AssImp\Exporter.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\Importer.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\importerdesc.h" />
+    <ClInclude Include="..\..\depends\AssImp\IOStream.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\IOSystem.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\light.h" />
+    <ClInclude Include="..\..\depends\AssImp\Logger.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\LogStream.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\material.h" />
+    <ClInclude Include="..\..\depends\AssImp\matrix3x3.h" />
+    <ClInclude Include="..\..\depends\AssImp\matrix4x4.h" />
+    <ClInclude Include="..\..\depends\AssImp\mesh.h" />
+    <ClInclude Include="..\..\depends\AssImp\NullLogger.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\postprocess.h" />
+    <ClInclude Include="..\..\depends\AssImp\ProgressHandler.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\quaternion.h" />
+    <ClInclude Include="..\..\depends\AssImp\revision.h" />
+    <ClInclude Include="..\..\depends\AssImp\scene.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\3DSHelper.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\3DSLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ACLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ASELoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ASEParser.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\assbin_chunks.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\AssimpPCH.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\B3DImporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BaseImporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BaseProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BlenderDNA.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BlenderIntermediate.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BlenderLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BlenderModifier.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BlenderScene.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BlenderSceneGen.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BlobIOSystem.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\foreach.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\format.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\lexical_cast.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\make_shared.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\math\common_factor_rt.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\noncopyable.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\pointer_cast.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\scoped_array.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\scoped_ptr.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\shared_array.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\shared_ptr.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\static_assert.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\timer.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BoostWorkaround\boost\tuple\tuple.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\BVHLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ByteSwap.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\CalcTangentsProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\CInterfaceIOWrapper.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\COBLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\COBScene.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ColladaExporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ColladaHelper.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ColladaLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ColladaParser.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ComputeUVMappingProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ConvertToLHProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\CSMLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\DeboneProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\DefaultIOStream.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\DefaultIOSystem.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\DefaultProgressHandler.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\DXFHelper.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\DXFLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Exceptional.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\fast_atof.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\FileLogStream.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\FileSystemFilter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\FindDegenerates.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\FindInstancesProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\FindInvalidDataProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\FixNormalsStep.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\GenericProperty.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\GenFaceNormalsProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\GenVertexNormalsProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\HalfLifeFileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Hash.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\HMPFileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\HMPLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\IFCLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\IFCReaderGen.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\IFCUtil.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\IFF.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Importer.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ImproveCacheLocality.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\IRRLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\IRRMeshLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\IRRShared.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\irrXMLWrapper.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\JoinVerticesProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\LimitBoneWeightsProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\LineSplitter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\LogAux.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\LWOAnimation.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\LWOFileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\LWOLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\LWSLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\M3Importer.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MakeVerboseFormat.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MaterialSystem.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MD2FileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MD2Loader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MD2NormalTable.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MD3FileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MD3Loader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MD4FileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MD5Loader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MD5Parser.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MDCFileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MDCLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MDCNormalTable.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MDLDefaultColorMap.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MDLFileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MDLLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MemoryIOWrapper.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\MS3DLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\NDOLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\NFFLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ObjExporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ObjFileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ObjFileImporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ObjFileMtlImporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ObjFileParser.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ObjTools.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\OFFLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\OgreImporter.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\OgreXmlHelper.hpp" />
+    <ClInclude Include="..\..\depends\AssImp\src\OptimizeGraph.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\OptimizeMeshes.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ParsingUtils.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\PlyExporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\PlyLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\PlyParser.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\PolyTools.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\PretransformVertices.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ProcessHelper.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Profiler.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\pstdint.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Q3BSPFileData.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Q3BSPFileImporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Q3BSPFileParser.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Q3BSPZipArchive.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Q3DLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\qnan.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\RawLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\RemoveComments.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\RemoveRedundantMaterials.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\RemoveVCProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\res\resource.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SceneCombiner.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ScenePreprocessor.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ScenePrivate.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SGSpatialSort.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SkeletonMeshBuilder.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SMDLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SmoothingGroups.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SortByPTypeProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SpatialSort.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SplitByBoneCountProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\SplitLargeMeshes.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\StandardShapes.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\StdOStreamLogStream.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\STEPFile.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\STEPFileReader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\STLExporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\STLLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\StreamReader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\StringComparison.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Subdivision.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\TargetAnimation.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\TerragenLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\TextureTransform.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\TinyFormatter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\TriangulateProcess.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\UnrealLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\ValidateDataStructure.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Vertex.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\VertexTriangleAdjacency.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\Win32DebugLogStream.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\XFileHelper.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\XFileImporter.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\XFileParser.h" />
+    <ClInclude Include="..\..\depends\AssImp\src\XGLLoader.h" />
+    <ClInclude Include="..\..\depends\AssImp\texture.h" />
+    <ClInclude Include="..\..\depends\AssImp\types.h" />
+    <ClInclude Include="..\..\depends\AssImp\vector2.h" />
+    <ClInclude Include="..\..\depends\AssImp\vector3.h" />
+    <ClInclude Include="..\..\depends\AssImp\version.h" />
+    <ClInclude Include="..\..\depends\GL3\gl3.h" />
+    <ClInclude Include="..\..\depends\GL3\gl3w.h" />
+    <ClInclude Include="..\..\depends\GL\freeglut.h" />
+    <ClInclude Include="..\..\depends\GL\freeglut_ext.h" />
+    <ClInclude Include="..\..\depends\GL\freeglut_std.h" />
+    <ClInclude Include="..\..\depends\GL\glut.h" />
+    <ClInclude Include="..\..\depends\GL\src\freeglut_internal.h" />
+    <ClInclude Include="..\..\depends\GL\src\freeglut_teapot_data.h" />
+    <ClInclude Include="..\..\src\config.h" />
+    <ClInclude Include="..\..\src\File\MeshLoader.h" />
+    <ClInclude Include="..\..\src\File\ShaderLoader.h" />
+    <ClInclude Include="..\..\src\File\TextureLoader.h" />
+    <ClInclude Include="..\..\src\GM\ATTRIB.h" />
+    <ClInclude Include="..\..\src\GM\DebugOutput.h" />
+    <ClInclude Include="..\..\src\GM\FBO.h" />
+    <ClInclude Include="..\..\src\GM\GPUTimer.h" />
+    <ClInclude Include="..\..\src\GM\IBO.h" />
+    <ClInclude Include="..\..\src\GM\Material.h" />
+    <ClInclude Include="..\..\src\GM\PBO.h" />
+    <ClInclude Include="..\..\src\GM\RT.h" />
+    <ClInclude Include="..\..\src\GM\Sampler.h" />
+    <ClInclude Include="..\..\src\GM\Shader.h" />
+    <ClInclude Include="..\..\src\GM\ShaderConstants.h" />
+    <ClInclude Include="..\..\src\GM\Tex2D.h" />
+    <ClInclude Include="..\..\src\GM\TexCUBE.h" />
+    <ClInclude Include="..\..\src\GM\Uniform.h" />
+    <ClInclude Include="..\..\src\GM\VAO.h" />
+    <ClInclude Include="..\..\src\GM\VBO.h" />
+    <ClInclude Include="..\..\src\Kernel.h" />
+    <ClInclude Include="..\..\src\Parser.h" />
+    <ClInclude Include="..\..\src\Passes\BloomPass.h" />
+    <ClInclude Include="..\..\src\Passes\FinalPass.h" />
+    <ClInclude Include="..\..\src\Passes\GodraysPass.h" />
+    <ClInclude Include="..\..\src\Passes\IPass.h" />
+    <ClInclude Include="..\..\src\Passes\ScenePass.h" />
+    <ClInclude Include="..\..\src\SceneManager.h" />
+    <ClInclude Include="..\..\src\Scene\Camera.h" />
+    <ClInclude Include="..\..\src\Scene\Light.h" />
+    <ClInclude Include="..\..\src\Scene\Mesh.h" />
+    <ClInclude Include="..\..\src\Scene\MeshData_t.h" />
+    <ClInclude Include="..\..\src\Scene\Node.h" />
+    <ClInclude Include="..\..\src\Scene\Quad.h" />
+    <ClInclude Include="..\..\src\Scene\Skybox.h" />
+    <ClInclude Include="..\..\src\Scene\Terrain.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\depends\AssImp\contrib\clipper\clipper.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\ConvertUTF\ConvertUTF.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\irrXML\irrXML.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\common\shapes.cc" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\advancing_front.cc" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\cdt.cc" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\sweep.cc" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\sweep_context.cc" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\unzip\ioapi.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\unzip\unzip.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\adler32.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\compress.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\crc32.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\deflate.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\inffast.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\inflate.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\inftrees.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\trees.c" />
+    <ClCompile Include="..\..\depends\AssImp\contrib\zlib\zutil.c" />
+    <ClCompile Include="..\..\depends\AssImp\src\3DSConverter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\3DSLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ACLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ASELoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ASEParser.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\Assimp.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\AssimpCExport.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\AssimpPCH.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\B3DImporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\BaseImporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\BaseProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\BlenderDNA.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\BlenderLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\BlenderModifier.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\BlenderScene.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\BVHLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\CalcTangentsProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\COBLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ColladaExporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ColladaLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ColladaParser.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ComputeUVMappingProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ConvertToLHProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\CSMLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\DeboneProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\DefaultIOStream.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\DefaultIOSystem.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\DefaultLogger.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\DXFLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\Exporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\FindDegenerates.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\FindInstancesProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\FindInvalidDataProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\FixNormalsStep.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\GenFaceNormalsProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\GenVertexNormalsProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\HMPLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IFCCurve.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IFCGeometry.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IFCLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IFCMaterial.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IFCProfile.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IFCReaderGen.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IFCUtil.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\Importer.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ImporterRegistry.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ImproveCacheLocality.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IRRLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IRRMeshLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\IRRShared.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\JoinVerticesProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\LimitBoneWeightsProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\LWOAnimation.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\LWOBLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\LWOLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\LWOMaterial.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\LWSLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\M3Importer.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MakeVerboseFormat.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MaterialSystem.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MD2Loader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MD3Loader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MD5Loader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MD5Parser.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MDCLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MDLLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MDLMaterialLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\MS3DLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\NDOLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\NFFLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ObjExporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ObjFileImporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ObjFileMtlImporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ObjFileParser.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\OFFLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\OgreImporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\OgreMaterial.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\OgreMesh.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\OgreSkeleton.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\OptimizeGraph.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\OptimizeMeshes.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\PlyExporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\PlyLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\PlyParser.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\PostStepRegistry.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\PretransformVertices.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ProcessHelper.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\Q3BSPFileImporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\Q3BSPFileParser.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\Q3BSPZipArchive.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\Q3DLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\RawLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\RemoveComments.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\RemoveRedundantMaterials.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\RemoveVCProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\SceneCombiner.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ScenePreprocessor.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\SGSpatialSort.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\SkeletonMeshBuilder.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\SMDLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\SortByPTypeProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\SpatialSort.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\SplitByBoneCountProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\SplitLargeMeshes.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\StandardShapes.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\STEPFileReader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\STLExporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\STLLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\Subdivision.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\TargetAnimation.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\TerragenLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\TextureTransform.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\TriangulateProcess.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\UnrealLoader.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\ValidateDataStructure.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\VertexTriangleAdjacency.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\XFileImporter.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\XFileParser.cpp" />
+    <ClCompile Include="..\..\depends\AssImp\src\XGLLoader.cpp" />
+    <ClCompile Include="..\..\depends\GL3\gl3w.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_callbacks.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_cursor.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_display.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_ext.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_font.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_font_data.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_gamemode.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_geometry.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_glutfont_definitions.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_init.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_input_devices.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_joystick.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_main.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_menu.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_misc.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_overlay.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_spaceball.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_state.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_stroke_mono_roman.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_stroke_roman.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_structure.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_teapot.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_videoresize.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_window.c" />
+    <ClCompile Include="..\..\depends\GL\src\freeglut_xinput.c" />
+    <ClCompile Include="..\..\src\File\MeshLoader.cpp" />
+    <ClCompile Include="..\..\src\File\ShaderLoader.cpp" />
+    <ClCompile Include="..\..\src\File\TextureLoader.cpp" />
+    <ClCompile Include="..\..\src\GM\DebugOutput.cpp" />
+    <ClCompile Include="..\..\src\GM\FBO.cpp" />
+    <ClCompile Include="..\..\src\GM\GPUTimer.cpp" />
+    <ClCompile Include="..\..\src\GM\IBO.cpp" />
+    <ClCompile Include="..\..\src\GM\Material.cpp" />
+    <ClCompile Include="..\..\src\GM\PBO.cpp" />
+    <ClCompile Include="..\..\src\GM\RT.cpp" />
+    <ClCompile Include="..\..\src\GM\Sampler.cpp" />
+    <ClCompile Include="..\..\src\GM\Shader.cpp" />
+    <ClCompile Include="..\..\src\GM\Tex2D.cpp" />
+    <ClCompile Include="..\..\src\GM\TexCUBE.cpp" />
+    <ClCompile Include="..\..\src\GM\Uniform.cpp" />
+    <ClCompile Include="..\..\src\GM\VAO.cpp" />
+    <ClCompile Include="..\..\src\GM\VBO.cpp" />
+    <ClCompile Include="..\..\src\Kernel.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\Passes\BloomPass.cpp" />
+    <ClCompile Include="..\..\src\Passes\FinalPass.cpp" />
+    <ClCompile Include="..\..\src\Passes\GodraysPass.cpp" />
+    <ClCompile Include="..\..\src\Passes\IPass.cpp" />
+    <ClCompile Include="..\..\src\Passes\ScenePass.cpp" />
+    <ClCompile Include="..\..\src\SceneManager.cpp" />
+    <ClCompile Include="..\..\src\Scene\Camera.cpp" />
+    <ClCompile Include="..\..\src\Scene\Light.cpp" />
+    <ClCompile Include="..\..\src\Scene\Mesh.cpp" />
+    <ClCompile Include="..\..\src\Scene\Node.cpp" />
+    <ClCompile Include="..\..\src\Scene\Quad.cpp" />
+    <ClCompile Include="..\..\src\Scene\Skybox.cpp" />
+    <ClCompile Include="..\..\src\Scene\Terrain.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

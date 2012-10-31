@@ -1,0 +1,853 @@
+﻿Build started 14.10.2012 20:55:34.
+     1>Project "C:\Users\Ann Helen\Downloads\GMTerrainFBO3\GMTerrainFBO3\build\vc10\GMTerrain.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\GMTerrainFog.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../depends/ /I../../depends/AssImp/src/BoostWorkaround/ /I../../depends/AssImp/contrib/ /I"../../depends/AssImp/contrib/cppunit-1.12.1/include/" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D FREEGLUT_STATIC /D ASSIMP_BUILD_BOOST_WORKAROUND /D _SCL_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D ASSIMP_BUILD_NO_IFC_IMPORTER /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\depends\AssImp\contrib\clipper\clipper.cpp ..\..\depends\AssImp\contrib\irrXML\irrXML.cpp ..\..\depends\AssImp\contrib\poly2tri\poly2tri\common\shapes.cc ..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\advancing_front.cc ..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\cdt.cc ..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\sweep.cc ..\..\depends\AssImp\contrib\poly2tri\poly2tri\sweep\sweep_context.cc ..\..\depends\AssImp\src\3DSConverter.cpp ..\..\depends\AssImp\src\3DSLoader.cpp ..\..\depends\AssImp\src\ACLoader.cpp ..\..\depends\AssImp\src\ASELoader.cpp ..\..\depends\AssImp\src\ASEParser.cpp ..\..\depends\AssImp\src\Assimp.cpp ..\..\depends\AssImp\src\AssimpCExport.cpp ..\..\depends\AssImp\src\AssimpPCH.cpp ..\..\depends\AssImp\src\B3DImporter.cpp ..\..\depends\AssImp\src\BaseImporter.cpp ..\..\depends\AssImp\src\BaseProcess.cpp ..\..\depends\AssImp\src\BlenderDNA.cpp ..\..\depends\AssImp\src\BlenderLoader.cpp ..\..\depends\AssImp\src\BlenderModifier.cpp ..\..\depends\AssImp\src\BlenderScene.cpp ..\..\depends\AssImp\src\BVHLoader.cpp ..\..\depends\AssImp\src\CalcTangentsProcess.cpp ..\..\depends\AssImp\src\COBLoader.cpp ..\..\depends\AssImp\src\ColladaExporter.cpp ..\..\depends\AssImp\src\ColladaLoader.cpp ..\..\depends\AssImp\src\ColladaParser.cpp ..\..\depends\AssImp\src\ComputeUVMappingProcess.cpp ..\..\depends\AssImp\src\ConvertToLHProcess.cpp ..\..\depends\AssImp\src\CSMLoader.cpp ..\..\depends\AssImp\src\DeboneProcess.cpp ..\..\depends\AssImp\src\DefaultIOStream.cpp ..\..\depends\AssImp\src\DefaultIOSystem.cpp ..\..\depends\AssImp\src\DefaultLogger.cpp ..\..\depends\AssImp\src\DXFLoader.cpp ..\..\depends\AssImp\src\Exporter.cpp ..\..\depends\AssImp\src\FindDegenerates.cpp ..\..\depends\AssImp\src\FindInstancesProcess.cpp ..\..\depends\AssImp\src\FindInvalidDataProcess.cpp ..\..\depends\AssImp\src\FixNormalsStep.cpp ..\..\depends\AssImp\src\GenFaceNormalsProcess.cpp ..\..\depends\AssImp\src\GenVertexNormalsProcess.cpp ..\..\depends\AssImp\src\HMPLoader.cpp ..\..\depends\AssImp\src\IFCCurve.cpp ..\..\depends\AssImp\src\IFCGeometry.cpp ..\..\depends\AssImp\src\IFCLoader.cpp ..\..\depends\AssImp\src\IFCMaterial.cpp ..\..\depends\AssImp\src\IFCProfile.cpp ..\..\depends\AssImp\src\IFCReaderGen.cpp ..\..\depends\AssImp\src\IFCUtil.cpp ..\..\depends\AssImp\src\Importer.cpp ..\..\depends\AssImp\src\ImporterRegistry.cpp ..\..\depends\AssImp\src\ImproveCacheLocality.cpp ..\..\depends\AssImp\src\IRRLoader.cpp ..\..\depends\AssImp\src\IRRMeshLoader.cpp ..\..\depends\AssImp\src\IRRShared.cpp ..\..\depends\AssImp\src\JoinVerticesProcess.cpp ..\..\depends\AssImp\src\LimitBoneWeightsProcess.cpp ..\..\depends\AssImp\src\LWOAnimation.cpp ..\..\depends\AssImp\src\LWOBLoader.cpp ..\..\depends\AssImp\src\LWOLoader.cpp ..\..\depends\AssImp\src\LWOMaterial.cpp ..\..\depends\AssImp\src\LWSLoader.cpp ..\..\depends\AssImp\src\M3Importer.cpp ..\..\depends\AssImp\src\MakeVerboseFormat.cpp ..\..\depends\AssImp\src\MaterialSystem.cpp ..\..\depends\AssImp\src\MD2Loader.cpp ..\..\depends\AssImp\src\MD3Loader.cpp ..\..\depends\AssImp\src\MD5Loader.cpp ..\..\depends\AssImp\src\MD5Parser.cpp ..\..\depends\AssImp\src\MDCLoader.cpp ..\..\depends\AssImp\src\MDLLoader.cpp ..\..\depends\AssImp\src\MDLMaterialLoader.cpp ..\..\depends\AssImp\src\MS3DLoader.cpp ..\..\depends\AssImp\src\NDOLoader.cpp ..\..\depends\AssImp\src\NFFLoader.cpp ..\..\depends\AssImp\src\ObjExporter.cpp ..\..\depends\AssImp\src\ObjFileImporter.cpp ..\..\depends\AssImp\src\ObjFileMtlImporter.cpp ..\..\depends\AssImp\src\ObjFileParser.cpp ..\..\depends\AssImp\src\OFFLoader.cpp ..\..\depends\AssImp\src\OgreImporter.cpp ..\..\depends\AssImp\src\OgreMaterial.cpp ..\..\depends\AssImp\src\OgreMesh.cpp ..\..\depends\AssImp\src\OgreSkeleton.cpp ..\..\depends\AssImp\src\OptimizeGraph.cpp ..\..\depends\AssImp\src\OptimizeMeshes.cpp ..\..\depends\AssImp\src\PlyExporter.cpp ..\..\depends\AssImp\src\PlyLoader.cpp ..\..\depends\AssImp\src\PlyParser.cpp ..\..\depends\AssImp\src\PostStepRegistry.cpp ..\..\depends\AssImp\src\PretransformVertices.cpp ..\..\depends\AssImp\src\ProcessHelper.cpp ..\..\depends\AssImp\src\Q3BSPFileImporter.cpp ..\..\depends\AssImp\src\Q3BSPFileParser.cpp ..\..\depends\AssImp\src\Q3BSPZipArchive.cpp ..\..\depends\AssImp\src\Q3DLoader.cpp ..\..\depends\AssImp\src\RawLoader.cpp ..\..\depends\AssImp\src\RemoveComments.cpp ..\..\depends\AssImp\src\RemoveRedundantMaterials.cpp ..\..\depends\AssImp\src\RemoveVCProcess.cpp ..\..\depends\AssImp\src\SceneCombiner.cpp ..\..\depends\AssImp\src\ScenePreprocessor.cpp ..\..\depends\AssImp\src\SGSpatialSort.cpp ..\..\depends\AssImp\src\SkeletonMeshBuilder.cpp ..\..\depends\AssImp\src\SMDLoader.cpp ..\..\depends\AssImp\src\SortByPTypeProcess.cpp ..\..\depends\AssImp\src\SpatialSort.cpp ..\..\depends\AssImp\src\SplitByBoneCountProcess.cpp ..\..\depends\AssImp\src\SplitLargeMeshes.cpp ..\..\depends\AssImp\src\StandardShapes.cpp ..\..\depends\AssImp\src\STEPFileReader.cpp ..\..\depends\AssImp\src\STLExporter.cpp ..\..\depends\AssImp\src\STLLoader.cpp ..\..\depends\AssImp\src\Subdivision.cpp ..\..\depends\AssImp\src\TargetAnimation.cpp ..\..\depends\AssImp\src\TerragenLoader.cpp ..\..\depends\AssImp\src\TextureTransform.cpp ..\..\depends\AssImp\src\TriangulateProcess.cpp ..\..\depends\AssImp\src\UnrealLoader.cpp ..\..\depends\AssImp\src\ValidateDataStructure.cpp ..\..\depends\AssImp\src\VertexTriangleAdjacency.cpp ..\..\depends\AssImp\src\XFileImporter.cpp ..\..\depends\AssImp\src\XFileParser.cpp ..\..\depends\AssImp\src\XGLLoader.cpp ..\..\src\File\MeshLoader.cpp ..\..\src\File\ShaderLoader.cpp ..\..\src\File\TextureLoader.cpp ..\..\src\GM\DebugOutput.cpp ..\..\src\GM\FBO.cpp ..\..\src\GM\GPUTimer.cpp ..\..\src\GM\IBO.cpp ..\..\src\GM\Material.cpp ..\..\src\GM\PBO.cpp ..\..\src\GM\RT.cpp ..\..\src\GM\Sampler.cpp ..\..\src\GM\Shader.cpp ..\..\src\GM\Tex2D.cpp ..\..\src\GM\TexCUBE.cpp ..\..\src\GM\Uniform.cpp ..\..\src\GM\VAO.cpp ..\..\src\GM\VBO.cpp ..\..\src\Kernel.cpp ..\..\src\main.cpp ..\..\src\Passes\BloomPass.cpp ..\..\src\Passes\FinalPass.cpp ..\..\src\Passes\GodraysPass.cpp ..\..\src\Passes\IPass.cpp ..\..\src\Passes\ScenePass.cpp ..\..\src\SceneManager.cpp ..\..\src\Scene\Camera.cpp ..\..\src\Scene\Light.cpp ..\..\src\Scene\Mesh.cpp ..\..\src\Scene\Node.cpp ..\..\src\Scene\Quad.cpp ..\..\src\Scene\Skybox.cpp ..\..\src\Scene\Terrain.cpp
+         Terrain.cpp
+     1>c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\terrain.cpp(303): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+         Skybox.cpp
+         Quad.cpp
+         Node.cpp
+         Mesh.cpp
+         Light.cpp
+         Camera.cpp
+         SceneManager.cpp
+         ScenePass.cpp
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1664): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1446) : while compiling class template member function 'std::tr1::shared_ptr<_Ty>::shared_ptr(std::nullptr_t)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(76) : see reference to class template instantiation 'std::tr1::shared_ptr<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1107): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1106) : while compiling class template member function 'void std::tr1::_Ref_count<_Ty>::_Destroy(void)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1662) : see reference to class template instantiation 'std::tr1::_Ref_count<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+         IPass.cpp
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1664): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1446) : while compiling class template member function 'std::tr1::shared_ptr<_Ty>::shared_ptr(std::nullptr_t)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(76) : see reference to class template instantiation 'std::tr1::shared_ptr<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1107): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1106) : while compiling class template member function 'void std::tr1::_Ref_count<_Ty>::_Destroy(void)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1662) : see reference to class template instantiation 'std::tr1::_Ref_count<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+         GodraysPass.cpp
+         FinalPass.cpp
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1664): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1446) : while compiling class template member function 'std::tr1::shared_ptr<_Ty>::shared_ptr(std::nullptr_t)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(76) : see reference to class template instantiation 'std::tr1::shared_ptr<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1107): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1106) : while compiling class template member function 'void std::tr1::_Ref_count<_Ty>::_Destroy(void)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1662) : see reference to class template instantiation 'std::tr1::_Ref_count<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+         BloomPass.cpp
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1664): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1446) : while compiling class template member function 'std::tr1::shared_ptr<_Ty>::shared_ptr(std::nullptr_t)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(76) : see reference to class template instantiation 'std::tr1::shared_ptr<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1107): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1106) : while compiling class template member function 'void std::tr1::_Ref_count<_Ty>::_Destroy(void)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1662) : see reference to class template instantiation 'std::tr1::_Ref_count<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+         main.cpp
+         Kernel.cpp
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1664): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1446) : while compiling class template member function 'std::tr1::shared_ptr<_Ty>::shared_ptr(std::nullptr_t)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(76) : see reference to class template instantiation 'std::tr1::shared_ptr<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1107): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1106) : while compiling class template member function 'void std::tr1::_Ref_count<_Ty>::_Destroy(void)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1662) : see reference to class template instantiation 'std::tr1::_Ref_count<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+         VBO.cpp
+         VAO.cpp
+         Uniform.cpp
+         TexCUBE.cpp
+         Tex2D.cpp
+         Generating Code...
+         Compiling...
+         Shader.cpp
+         Sampler.cpp
+         RT.cpp
+         PBO.cpp
+         Material.cpp
+         IBO.cpp
+         GPUTimer.cpp
+         FBO.cpp
+         DebugOutput.cpp
+         TextureLoader.cpp
+         ShaderLoader.cpp
+         MeshLoader.cpp
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1664): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1446) : while compiling class template member function 'std::tr1::shared_ptr<_Ty>::shared_ptr(std::nullptr_t)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(76) : see reference to class template instantiation 'std::tr1::shared_ptr<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1107): warning C4150: deletion of pointer to incomplete type 'Scene::Light'; no destructor called
+                 c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\src\scene\node.h(16) : see declaration of 'Scene::Light'
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1106) : while compiling class template member function 'void std::tr1::_Ref_count<_Ty>::_Destroy(void)'
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1662) : see reference to class template instantiation 'std::tr1::_Ref_count<_Ty>' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\memory(1448) : see reference to function template instantiation 'void std::tr1::shared_ptr<_Ty>::_Resetp<_Ty>(_Ux *)' being compiled
+                 with
+                 [
+                     _Ty=Scene::Light,
+                     _Ux=Scene::Light
+                 ]
+         XGLLoader.cpp
+         XFileParser.cpp
+         XFileImporter.cpp
+         VertexTriangleAdjacency.cpp
+         ValidateDataStructure.cpp
+         UnrealLoader.cpp
+         TriangulateProcess.cpp
+         TextureTransform.cpp
+         Generating Code...
+         Compiling...
+         TerragenLoader.cpp
+         TargetAnimation.cpp
+         Subdivision.cpp
+         STLLoader.cpp
+         STLExporter.cpp
+         STEPFileReader.cpp
+         StandardShapes.cpp
+         SplitLargeMeshes.cpp
+         SplitByBoneCountProcess.cpp
+         SpatialSort.cpp
+         SortByPTypeProcess.cpp
+         SMDLoader.cpp
+         SkeletonMeshBuilder.cpp
+         SGSpatialSort.cpp
+         ScenePreprocessor.cpp
+         SceneCombiner.cpp
+         RemoveVCProcess.cpp
+         RemoveRedundantMaterials.cpp
+         RemoveComments.cpp
+         RawLoader.cpp
+         Generating Code...
+         Compiling...
+         Q3DLoader.cpp
+         Q3BSPZipArchive.cpp
+         Q3BSPFileParser.cpp
+         Q3BSPFileImporter.cpp
+         ProcessHelper.cpp
+         PretransformVertices.cpp
+         PostStepRegistry.cpp
+         PlyParser.cpp
+         PlyLoader.cpp
+         PlyExporter.cpp
+         OptimizeMeshes.cpp
+         OptimizeGraph.cpp
+         OgreSkeleton.cpp
+         OgreMesh.cpp
+         OgreMaterial.cpp
+         OgreImporter.cpp
+         OFFLoader.cpp
+         ObjFileParser.cpp
+         ObjFileMtlImporter.cpp
+         ObjFileImporter.cpp
+         Generating Code...
+         Compiling...
+         ObjExporter.cpp
+         NFFLoader.cpp
+         NDOLoader.cpp
+         MS3DLoader.cpp
+         MDLMaterialLoader.cpp
+         MDLLoader.cpp
+         MDCLoader.cpp
+         MD5Parser.cpp
+         MD5Loader.cpp
+         MD3Loader.cpp
+         MD2Loader.cpp
+         MaterialSystem.cpp
+         MakeVerboseFormat.cpp
+         M3Importer.cpp
+         LWSLoader.cpp
+         LWOMaterial.cpp
+         LWOLoader.cpp
+         LWOBLoader.cpp
+         LWOAnimation.cpp
+         LimitBoneWeightsProcess.cpp
+         Generating Code...
+         Compiling...
+         JoinVerticesProcess.cpp
+         IRRShared.cpp
+         IRRMeshLoader.cpp
+         IRRLoader.cpp
+         ImproveCacheLocality.cpp
+         ImporterRegistry.cpp
+         Importer.cpp
+         IFCUtil.cpp
+         IFCReaderGen.cpp
+         IFCProfile.cpp
+         IFCMaterial.cpp
+         IFCLoader.cpp
+         IFCGeometry.cpp
+         IFCCurve.cpp
+         HMPLoader.cpp
+         GenVertexNormalsProcess.cpp
+         GenFaceNormalsProcess.cpp
+         FixNormalsStep.cpp
+         FindInvalidDataProcess.cpp
+         FindInstancesProcess.cpp
+         Generating Code...
+         Compiling...
+         FindDegenerates.cpp
+         Exporter.cpp
+         DXFLoader.cpp
+         DefaultLogger.cpp
+         DefaultIOSystem.cpp
+         DefaultIOStream.cpp
+         DeboneProcess.cpp
+         CSMLoader.cpp
+         ConvertToLHProcess.cpp
+         ComputeUVMappingProcess.cpp
+         ColladaParser.cpp
+         ColladaLoader.cpp
+         ColladaExporter.cpp
+         COBLoader.cpp
+         CalcTangentsProcess.cpp
+         BVHLoader.cpp
+         BlenderScene.cpp
+         BlenderModifier.cpp
+         BlenderLoader.cpp
+         BlenderDNA.cpp
+         Generating Code...
+         Compiling...
+         BaseProcess.cpp
+         BaseImporter.cpp
+         B3DImporter.cpp
+         AssimpPCH.cpp
+         AssimpCExport.cpp
+         Assimp.cpp
+         ASEParser.cpp
+         ASELoader.cpp
+         ACLoader.cpp
+         3DSLoader.cpp
+         3DSConverter.cpp
+         sweep_context.cc
+         sweep.cc
+     1>c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\depends\assimp\contrib\poly2tri\poly2tri\sweep\sweep.cc(757): warning C4018: '<' : signed/unsigned mismatch
+         cdt.cc
+         advancing_front.cc
+         shapes.cc
+         irrXML.cpp
+         clipper.cpp
+         Generating Code...
+     1>c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\depends\assimp\contrib\poly2tri\poly2tri\common\shapes.cc(167): warning C4715: 'p2t::Triangle::Index' : not all control paths return a value
+     1>c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\depends\assimp\contrib\poly2tri\poly2tri\common\shapes.cc(226): warning C4715: 'p2t::Triangle::PointCW' : not all control paths return a value
+     1>c:\users\ann helen\downloads\gmterrainfbo3\gmterrainfbo3\depends\assimp\contrib\poly2tri\poly2tri\common\shapes.cc(239): warning C4715: 'p2t::Triangle::PointCCW' : not all control paths return a value
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../depends/ /I../../depends/AssImp/src/BoostWorkaround/ /I../../depends/AssImp/contrib/ /I"../../depends/AssImp/contrib/cppunit-1.12.1/include/" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D FREEGLUT_STATIC /D ASSIMP_BUILD_BOOST_WORKAROUND /D _SCL_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D ASSIMP_BUILD_NO_IFC_IMPORTER /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\depends\AssImp\contrib\ConvertUTF\ConvertUTF.c ..\..\depends\AssImp\contrib\unzip\ioapi.c ..\..\depends\AssImp\contrib\unzip\unzip.c ..\..\depends\AssImp\contrib\zlib\adler32.c ..\..\depends\AssImp\contrib\zlib\compress.c ..\..\depends\AssImp\contrib\zlib\crc32.c ..\..\depends\AssImp\contrib\zlib\deflate.c ..\..\depends\AssImp\contrib\zlib\inffast.c ..\..\depends\AssImp\contrib\zlib\inflate.c ..\..\depends\AssImp\contrib\zlib\inftrees.c ..\..\depends\AssImp\contrib\zlib\trees.c ..\..\depends\AssImp\contrib\zlib\zutil.c ..\..\depends\GL3\gl3w.c ..\..\depends\GL\src\freeglut_callbacks.c ..\..\depends\GL\src\freeglut_cursor.c ..\..\depends\GL\src\freeglut_display.c ..\..\depends\GL\src\freeglut_ext.c ..\..\depends\GL\src\freeglut_font.c ..\..\depends\GL\src\freeglut_font_data.c ..\..\depends\GL\src\freeglut_gamemode.c ..\..\depends\GL\src\freeglut_geometry.c ..\..\depends\GL\src\freeglut_glutfont_definitions.c ..\..\depends\GL\src\freeglut_init.c ..\..\depends\GL\src\freeglut_input_devices.c ..\..\depends\GL\src\freeglut_joystick.c ..\..\depends\GL\src\freeglut_main.c ..\..\depends\GL\src\freeglut_menu.c ..\..\depends\GL\src\freeglut_misc.c ..\..\depends\GL\src\freeglut_overlay.c ..\..\depends\GL\src\freeglut_spaceball.c ..\..\depends\GL\src\freeglut_state.c ..\..\depends\GL\src\freeglut_stroke_mono_roman.c ..\..\depends\GL\src\freeglut_stroke_roman.c ..\..\depends\GL\src\freeglut_structure.c ..\..\depends\GL\src\freeglut_teapot.c ..\..\depends\GL\src\freeglut_videoresize.c ..\..\depends\GL\src\freeglut_window.c ..\..\depends\GL\src\freeglut_xinput.c
+         freeglut_xinput.c
+         freeglut_window.c
+         fgSetupPixelFormat(): there is still some work to do here!
+         freeglut_videoresize.c
+         freeglut_teapot.c
+         freeglut_structure.c
+         freeglut_stroke_roman.c
+         freeglut_stroke_mono_roman.c
+         freeglut_state.c
+         freeglut_spaceball.c
+         freeglut_overlay.c
+         freeglut_misc.c
+         freeglut_menu.c
+         freeglut_main.c
+         freeglut_joystick.c
+         freeglut_input_devices.c
+         freeglut_init.c
+         freeglut_glutfont_definitions.c
+         freeglut_geometry.c
+         freeglut_gamemode.c
+         freeglut_font_data.c
+         Generating Code...
+         Compiling...
+         freeglut_font.c
+         freeglut_ext.c
+         freeglut_display.c
+         freeglut_cursor.c
+         freeglut_callbacks.c
+         gl3w.c
+         zutil.c
+         trees.c
+         inftrees.c
+         inflate.c
+         inffast.c
+         deflate.c
+         crc32.c
+         compress.c
+         adler32.c
+         unzip.c
+         ioapi.c
+         ConvertUTF.c
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\GMTerrainFog-debug.exe.embed.manifest.res" Debug\GMTerrainFog-debug_manifest.rc 
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../../bin/Debug/GMTerrainFog-debug.exe" /INCREMENTAL /NOLOGO /LIBPATH:../../depends/IL/lib/ OpenGL32.lib WinMM.lib DevIL.lib ILU.lib ILUT.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\GMTerrainFog-debug.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Ann Helen\Downloads\GMTerrainFBO3\GMTerrainFBO3\bin\Debug\GMTerrainFog-debug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../../bin/Debug/GMTerrainFog-debug.lib" /MACHINE:X86 "Debug\GMTerrainFog-debug.exe.embed.manifest.res"
+         Debug\clipper.obj
+         Debug\ConvertUTF.obj
+         Debug\irrXML.obj
+         Debug\shapes.obj
+         Debug\advancing_front.obj
+         Debug\cdt.obj
+         Debug\sweep.obj
+         Debug\sweep_context.obj
+         Debug\ioapi.obj
+         Debug\unzip.obj
+         Debug\adler32.obj
+         Debug\compress.obj
+         Debug\crc32.obj
+         Debug\deflate.obj
+         Debug\inffast.obj
+         Debug\inflate.obj
+         Debug\inftrees.obj
+         Debug\trees.obj
+         Debug\zutil.obj
+         Debug\3DSConverter.obj
+         Debug\3DSLoader.obj
+         Debug\ACLoader.obj
+         Debug\ASELoader.obj
+         Debug\ASEParser.obj
+         Debug\Assimp.obj
+         Debug\AssimpCExport.obj
+         Debug\AssimpPCH.obj
+         Debug\B3DImporter.obj
+         Debug\BaseImporter.obj
+         Debug\BaseProcess.obj
+         Debug\BlenderDNA.obj
+         Debug\BlenderLoader.obj
+         Debug\BlenderModifier.obj
+         Debug\BlenderScene.obj
+         Debug\BVHLoader.obj
+         Debug\CalcTangentsProcess.obj
+         Debug\COBLoader.obj
+         Debug\ColladaExporter.obj
+         Debug\ColladaLoader.obj
+         Debug\ColladaParser.obj
+         Debug\ComputeUVMappingProcess.obj
+         Debug\ConvertToLHProcess.obj
+         Debug\CSMLoader.obj
+         Debug\DeboneProcess.obj
+         Debug\DefaultIOStream.obj
+         Debug\DefaultIOSystem.obj
+         Debug\DefaultLogger.obj
+         Debug\DXFLoader.obj
+         Debug\Exporter.obj
+         Debug\FindDegenerates.obj
+         Debug\FindInstancesProcess.obj
+         Debug\FindInvalidDataProcess.obj
+         Debug\FixNormalsStep.obj
+         Debug\GenFaceNormalsProcess.obj
+         Debug\GenVertexNormalsProcess.obj
+         Debug\HMPLoader.obj
+         Debug\IFCCurve.obj
+         Debug\IFCGeometry.obj
+         Debug\IFCLoader.obj
+         Debug\IFCMaterial.obj
+         Debug\IFCProfile.obj
+         Debug\IFCReaderGen.obj
+         Debug\IFCUtil.obj
+         Debug\Importer.obj
+         Debug\ImporterRegistry.obj
+         Debug\ImproveCacheLocality.obj
+         Debug\IRRLoader.obj
+         Debug\IRRMeshLoader.obj
+         Debug\IRRShared.obj
+         Debug\JoinVerticesProcess.obj
+         Debug\LimitBoneWeightsProcess.obj
+         Debug\LWOAnimation.obj
+         Debug\LWOBLoader.obj
+         Debug\LWOLoader.obj
+         Debug\LWOMaterial.obj
+         Debug\LWSLoader.obj
+         Debug\M3Importer.obj
+         Debug\MakeVerboseFormat.obj
+         Debug\MaterialSystem.obj
+         Debug\MD2Loader.obj
+         Debug\MD3Loader.obj
+         Debug\MD5Loader.obj
+         Debug\MD5Parser.obj
+         Debug\MDCLoader.obj
+         Debug\MDLLoader.obj
+         Debug\MDLMaterialLoader.obj
+         Debug\MS3DLoader.obj
+         Debug\NDOLoader.obj
+         Debug\NFFLoader.obj
+         Debug\ObjExporter.obj
+         Debug\ObjFileImporter.obj
+         Debug\ObjFileMtlImporter.obj
+         Debug\ObjFileParser.obj
+         Debug\OFFLoader.obj
+         Debug\OgreImporter.obj
+         Debug\OgreMaterial.obj
+         Debug\OgreMesh.obj
+         Debug\OgreSkeleton.obj
+         Debug\OptimizeGraph.obj
+         Debug\OptimizeMeshes.obj
+         Debug\PlyExporter.obj
+         Debug\PlyLoader.obj
+         Debug\PlyParser.obj
+         Debug\PostStepRegistry.obj
+         Debug\PretransformVertices.obj
+         Debug\ProcessHelper.obj
+         Debug\Q3BSPFileImporter.obj
+         Debug\Q3BSPFileParser.obj
+         Debug\Q3BSPZipArchive.obj
+         Debug\Q3DLoader.obj
+         Debug\RawLoader.obj
+         Debug\RemoveComments.obj
+         Debug\RemoveRedundantMaterials.obj
+         Debug\RemoveVCProcess.obj
+         Debug\SceneCombiner.obj
+         Debug\ScenePreprocessor.obj
+         Debug\SGSpatialSort.obj
+         Debug\SkeletonMeshBuilder.obj
+         Debug\SMDLoader.obj
+         Debug\SortByPTypeProcess.obj
+         Debug\SpatialSort.obj
+         Debug\SplitByBoneCountProcess.obj
+         Debug\SplitLargeMeshes.obj
+         Debug\StandardShapes.obj
+         Debug\STEPFileReader.obj
+         Debug\STLExporter.obj
+         Debug\STLLoader.obj
+         Debug\Subdivision.obj
+         Debug\TargetAnimation.obj
+         Debug\TerragenLoader.obj
+         Debug\TextureTransform.obj
+         Debug\TriangulateProcess.obj
+         Debug\UnrealLoader.obj
+         Debug\ValidateDataStructure.obj
+         Debug\VertexTriangleAdjacency.obj
+         Debug\XFileImporter.obj
+         Debug\XFileParser.obj
+         Debug\XGLLoader.obj
+         Debug\gl3w.obj
+         Debug\freeglut_callbacks.obj
+         Debug\freeglut_cursor.obj
+         Debug\freeglut_display.obj
+         Debug\freeglut_ext.obj
+         Debug\freeglut_font.obj
+         Debug\freeglut_font_data.obj
+         Debug\freeglut_gamemode.obj
+         Debug\freeglut_geometry.obj
+         Debug\freeglut_glutfont_definitions.obj
+         Debug\freeglut_init.obj
+         Debug\freeglut_input_devices.obj
+         Debug\freeglut_joystick.obj
+         Debug\freeglut_main.obj
+         Debug\freeglut_menu.obj
+         Debug\freeglut_misc.obj
+         Debug\freeglut_overlay.obj
+         Debug\freeglut_spaceball.obj
+         Debug\freeglut_state.obj
+         Debug\freeglut_stroke_mono_roman.obj
+         Debug\freeglut_stroke_roman.obj
+         Debug\freeglut_structure.obj
+         Debug\freeglut_teapot.obj
+         Debug\freeglut_videoresize.obj
+         Debug\freeglut_window.obj
+         Debug\freeglut_xinput.obj
+         Debug\MeshLoader.obj
+         Debug\ShaderLoader.obj
+         Debug\TextureLoader.obj
+         Debug\DebugOutput.obj
+         Debug\FBO.obj
+         Debug\GPUTimer.obj
+         Debug\IBO.obj
+         Debug\Material.obj
+         Debug\PBO.obj
+         Debug\RT.obj
+         Debug\Sampler.obj
+         Debug\Shader.obj
+         Debug\Tex2D.obj
+         Debug\TexCUBE.obj
+         Debug\Uniform.obj
+         Debug\VAO.obj
+         Debug\VBO.obj
+         Debug\Kernel.obj
+         Debug\main.obj
+         Debug\BloomPass.obj
+         Debug\FinalPass.obj
+         Debug\GodraysPass.obj
+         Debug\IPass.obj
+         Debug\ScenePass.obj
+         Debug\SceneManager.obj
+         Debug\Camera.obj
+         Debug\Light.obj
+         Debug\Mesh.obj
+         Debug\Node.obj
+         Debug\Quad.obj
+         Debug\Skybox.obj
+         Debug\Terrain.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\GMTerrainFog-debug.exe.embed.manifest" /manifest "Debug\GMTerrainFog-debug.exe.intermediate.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\GMTerrainFog-debug.exe.embed.manifest.res" Debug\GMTerrainFog-debug_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../../bin/Debug/GMTerrainFog-debug.exe" /INCREMENTAL /NOLOGO /LIBPATH:../../depends/IL/lib/ OpenGL32.lib WinMM.lib DevIL.lib ILU.lib ILUT.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\GMTerrainFog-debug.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Ann Helen\Downloads\GMTerrainFBO3\GMTerrainFBO3\bin\Debug\GMTerrainFog-debug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../../bin/Debug/GMTerrainFog-debug.lib" /MACHINE:X86 "Debug\GMTerrainFog-debug.exe.embed.manifest.res"
+         Debug\clipper.obj
+         Debug\ConvertUTF.obj
+         Debug\irrXML.obj
+         Debug\shapes.obj
+         Debug\advancing_front.obj
+         Debug\cdt.obj
+         Debug\sweep.obj
+         Debug\sweep_context.obj
+         Debug\ioapi.obj
+         Debug\unzip.obj
+         Debug\adler32.obj
+         Debug\compress.obj
+         Debug\crc32.obj
+         Debug\deflate.obj
+         Debug\inffast.obj
+         Debug\inflate.obj
+         Debug\inftrees.obj
+         Debug\trees.obj
+         Debug\zutil.obj
+         Debug\3DSConverter.obj
+         Debug\3DSLoader.obj
+         Debug\ACLoader.obj
+         Debug\ASELoader.obj
+         Debug\ASEParser.obj
+         Debug\Assimp.obj
+         Debug\AssimpCExport.obj
+         Debug\AssimpPCH.obj
+         Debug\B3DImporter.obj
+         Debug\BaseImporter.obj
+         Debug\BaseProcess.obj
+         Debug\BlenderDNA.obj
+         Debug\BlenderLoader.obj
+         Debug\BlenderModifier.obj
+         Debug\BlenderScene.obj
+         Debug\BVHLoader.obj
+         Debug\CalcTangentsProcess.obj
+         Debug\COBLoader.obj
+         Debug\ColladaExporter.obj
+         Debug\ColladaLoader.obj
+         Debug\ColladaParser.obj
+         Debug\ComputeUVMappingProcess.obj
+         Debug\ConvertToLHProcess.obj
+         Debug\CSMLoader.obj
+         Debug\DeboneProcess.obj
+         Debug\DefaultIOStream.obj
+         Debug\DefaultIOSystem.obj
+         Debug\DefaultLogger.obj
+         Debug\DXFLoader.obj
+         Debug\Exporter.obj
+         Debug\FindDegenerates.obj
+         Debug\FindInstancesProcess.obj
+         Debug\FindInvalidDataProcess.obj
+         Debug\FixNormalsStep.obj
+         Debug\GenFaceNormalsProcess.obj
+         Debug\GenVertexNormalsProcess.obj
+         Debug\HMPLoader.obj
+         Debug\IFCCurve.obj
+         Debug\IFCGeometry.obj
+         Debug\IFCLoader.obj
+         Debug\IFCMaterial.obj
+         Debug\IFCProfile.obj
+         Debug\IFCReaderGen.obj
+         Debug\IFCUtil.obj
+         Debug\Importer.obj
+         Debug\ImporterRegistry.obj
+         Debug\ImproveCacheLocality.obj
+         Debug\IRRLoader.obj
+         Debug\IRRMeshLoader.obj
+         Debug\IRRShared.obj
+         Debug\JoinVerticesProcess.obj
+         Debug\LimitBoneWeightsProcess.obj
+         Debug\LWOAnimation.obj
+         Debug\LWOBLoader.obj
+         Debug\LWOLoader.obj
+         Debug\LWOMaterial.obj
+         Debug\LWSLoader.obj
+         Debug\M3Importer.obj
+         Debug\MakeVerboseFormat.obj
+         Debug\MaterialSystem.obj
+         Debug\MD2Loader.obj
+         Debug\MD3Loader.obj
+         Debug\MD5Loader.obj
+         Debug\MD5Parser.obj
+         Debug\MDCLoader.obj
+         Debug\MDLLoader.obj
+         Debug\MDLMaterialLoader.obj
+         Debug\MS3DLoader.obj
+         Debug\NDOLoader.obj
+         Debug\NFFLoader.obj
+         Debug\ObjExporter.obj
+         Debug\ObjFileImporter.obj
+         Debug\ObjFileMtlImporter.obj
+         Debug\ObjFileParser.obj
+         Debug\OFFLoader.obj
+         Debug\OgreImporter.obj
+         Debug\OgreMaterial.obj
+         Debug\OgreMesh.obj
+         Debug\OgreSkeleton.obj
+         Debug\OptimizeGraph.obj
+         Debug\OptimizeMeshes.obj
+         Debug\PlyExporter.obj
+         Debug\PlyLoader.obj
+         Debug\PlyParser.obj
+         Debug\PostStepRegistry.obj
+         Debug\PretransformVertices.obj
+         Debug\ProcessHelper.obj
+         Debug\Q3BSPFileImporter.obj
+         Debug\Q3BSPFileParser.obj
+         Debug\Q3BSPZipArchive.obj
+         Debug\Q3DLoader.obj
+         Debug\RawLoader.obj
+         Debug\RemoveComments.obj
+         Debug\RemoveRedundantMaterials.obj
+         Debug\RemoveVCProcess.obj
+         Debug\SceneCombiner.obj
+         Debug\ScenePreprocessor.obj
+         Debug\SGSpatialSort.obj
+         Debug\SkeletonMeshBuilder.obj
+         Debug\SMDLoader.obj
+         Debug\SortByPTypeProcess.obj
+         Debug\SpatialSort.obj
+         Debug\SplitByBoneCountProcess.obj
+         Debug\SplitLargeMeshes.obj
+         Debug\StandardShapes.obj
+         Debug\STEPFileReader.obj
+         Debug\STLExporter.obj
+         Debug\STLLoader.obj
+         Debug\Subdivision.obj
+         Debug\TargetAnimation.obj
+         Debug\TerragenLoader.obj
+         Debug\TextureTransform.obj
+         Debug\TriangulateProcess.obj
+         Debug\UnrealLoader.obj
+         Debug\ValidateDataStructure.obj
+         Debug\VertexTriangleAdjacency.obj
+         Debug\XFileImporter.obj
+         Debug\XFileParser.obj
+         Debug\XGLLoader.obj
+         Debug\gl3w.obj
+         Debug\freeglut_callbacks.obj
+         Debug\freeglut_cursor.obj
+         Debug\freeglut_display.obj
+         Debug\freeglut_ext.obj
+         Debug\freeglut_font.obj
+         Debug\freeglut_font_data.obj
+         Debug\freeglut_gamemode.obj
+         Debug\freeglut_geometry.obj
+         Debug\freeglut_glutfont_definitions.obj
+         Debug\freeglut_init.obj
+         Debug\freeglut_input_devices.obj
+         Debug\freeglut_joystick.obj
+         Debug\freeglut_main.obj
+         Debug\freeglut_menu.obj
+         Debug\freeglut_misc.obj
+         Debug\freeglut_overlay.obj
+         Debug\freeglut_spaceball.obj
+         Debug\freeglut_state.obj
+         Debug\freeglut_stroke_mono_roman.obj
+         Debug\freeglut_stroke_roman.obj
+         Debug\freeglut_structure.obj
+         Debug\freeglut_teapot.obj
+         Debug\freeglut_videoresize.obj
+         Debug\freeglut_window.obj
+         Debug\freeglut_xinput.obj
+         Debug\MeshLoader.obj
+         Debug\ShaderLoader.obj
+         Debug\TextureLoader.obj
+         Debug\DebugOutput.obj
+         Debug\FBO.obj
+         Debug\GPUTimer.obj
+         Debug\IBO.obj
+         Debug\Material.obj
+         Debug\PBO.obj
+         Debug\RT.obj
+         Debug\Sampler.obj
+         Debug\Shader.obj
+         Debug\Tex2D.obj
+         Debug\TexCUBE.obj
+         Debug\Uniform.obj
+         Debug\VAO.obj
+         Debug\VBO.obj
+         Debug\Kernel.obj
+         Debug\main.obj
+         Debug\BloomPass.obj
+         Debug\FinalPass.obj
+         Debug\GodraysPass.obj
+         Debug\IPass.obj
+         Debug\ScenePass.obj
+         Debug\SceneManager.obj
+         Debug\Camera.obj
+         Debug\Light.obj
+         Debug\Mesh.obj
+         Debug\Node.obj
+         Debug\Quad.obj
+         Debug\Skybox.obj
+         Debug\Terrain.obj
+         GMTerrain.vcxproj -> C:\Users\Ann Helen\Downloads\GMTerrainFBO3\GMTerrainFBO3\build\vc10\../../bin/Debug/GMTerrainFog-debug.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\GMTerrainFog.unsuccessfulbuild".
+         Touching "Debug\GMTerrainFog.lastbuildstate".
+     1>Done Building Project "C:\Users\Ann Helen\Downloads\GMTerrainFBO3\GMTerrainFBO3\build\vc10\GMTerrain.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:02:56.30
